@@ -3,7 +3,7 @@ package calculator;
 public class StringCalculatorValidator {
     private final static int FIRST_OPERATOR_INDEX = 1;
     private final static int NEXT_OPERATOR_INDEX_OFFSET = 2;
-    private static final String DEMETER = " ";
+    private static final String DELIMITER = " ";
 
     public void throwExceptionIfEmpty(String input) {
         if(input.isEmpty()) {
@@ -17,7 +17,7 @@ public class StringCalculatorValidator {
             throw new StringCalculatorExceptions("유효한 표현식을 넣어야 합니다.");
         }
 
-        String[] inputs = input.split(DEMETER);
+        String[] inputs = input.split(DELIMITER);
         if(inputs.length < 3 || inputs.length % 2 == 0) {
             throw new StringCalculatorExceptions("유효한 표현식을 넣어야 합니다.");
         }
