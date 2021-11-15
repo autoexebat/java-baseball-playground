@@ -20,10 +20,10 @@ public class BaseballGame {
 
     private void playGround(Computer computer) {
         String input = inputView.input();
-
         Player player = new Player(input);
+
         Referee referee = new Referee(ballCount);
-        Judgement judgement = referee.judgement(computer.ballGenerate(), player.getBalls());
+        Judgement judgement = referee.judgement(computer.getBalls(), player.getBalls());
 
         outputView.output(judgement);
 

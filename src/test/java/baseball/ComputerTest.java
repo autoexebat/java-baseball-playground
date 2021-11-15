@@ -16,7 +16,7 @@ public class ComputerTest {
     @DisplayName("랜덤으로 ball 생성, 동일한 숫자가 나오지 않음")
     void ballGenerate(int count) {
         Computer computer = new Computer(count);
-        List<Ball> balls = computer.ballGenerate();
+        List<Ball> balls = computer.getBalls();
         Set<Integer> ballSet = balls.stream().map(b -> b.getNumber())
                 .collect(Collectors.toSet());
 

@@ -8,12 +8,18 @@ import java.util.stream.IntStream;
 
 public class Computer {
     private int count;
+    private List<Ball> balls;
 
     public Computer(int count) {
         this.count = count;
+        this.balls = ballGenerate();
     }
 
-    public List<Ball> ballGenerate() {
+    public List<Ball> getBalls() {
+        return balls;
+    }
+
+    private List<Ball> ballGenerate() {
         List<Integer> candidates = IntStream.range(0, 9).boxed().collect(Collectors.toList());
         Collections.shuffle(candidates);
         List<Integer> candidateList = new ArrayList<>(candidates.subList(0, count));
